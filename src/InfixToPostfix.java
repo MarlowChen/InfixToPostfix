@@ -27,6 +27,11 @@ public class InfixToPostfix {
  					// * or / > + or - so,print  topch	
 					}else if(topch == '*' || topch == '/'){
 						postfix = postfix + topch;
+						
+					//    (   < + or - so,push back to stack	
+					}else if(topch == '('){
+						javaStack.push(topch);
+						break;
 					}
 				}
 				//push this ch
@@ -46,6 +51,10 @@ public class InfixToPostfix {
  						
  					// * or / > + or - so,push back to stack	
 					}else if(topch == '+' || topch == '-'){
+						javaStack.push(topch);
+						break;
+					//    (   < * or / so,push back to stack	
+					}else if(topch == '('){
 						javaStack.push(topch);
 						break;
 					}
