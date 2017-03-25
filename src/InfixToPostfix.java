@@ -54,7 +54,9 @@ public class InfixToPostfix {
 				
 				javaStack.push(ch);
 				break;	
-				
+			// "(" 	direct push to stack 	
+			case '(': javaStack.push(ch);break;
+			
 			default: postfix = postfix + ch ;
 				break;
 			}
