@@ -260,11 +260,11 @@ case如果遇到乘或者除，進入判斷(遇到運算子為乘或者除，Cas
 
     for(char ch: infix.toCharArray()){
       switch(ch){
-        case '*' :
-        case '/' : break;
+        case '*' :
+        case '/' :  break;
         default: postfix = postfix + ch ;break;
       }
-    }    
+    }
 
 如果Stack內有値，拿出來與Case比對，Stack內的運算子可能會有加減或者乘除(後面解釋)
 
@@ -373,16 +373,16 @@ case如果遇到乘或者除，進入判斷(遇到運算子為乘或者除，Cas
 	case A  : 印出運算元  =======>  postfix : A  
 
 	case +  : 判斷運算子 
-          : Stack為空 
-          : 放入運算子  =======> postfix : A  ,  Stack : +
+          	: Stack為空 
+		: 放入運算子  =======> postfix : A  ,  Stack : +
 
 	case B  : 印出運算元  =======>	postfix : AB  ,  Stack : +
 
-	case *  : 判斷運算子 
-          : Stack不為空 
-          : 取出Stack的最後一個判斷權重 
-			    : 運算子+比較小所以放回Stack(Stack內最後運算子)，然後離開判斷
-			    : 再把現在的運算子*放入Stack =======>  postfix : AB  ,  Stack : + *
+	case *  : 判斷運算子
+		: Stack不為空 
+		: 取出Stack的最後一個判斷權重 
+		: 運算子+比較小所以放回Stack(Stack內最後運算子)，然後離開判斷
+		: 再把現在的運算子*放入Stack =======>  postfix : AB  ,  Stack : + *
 
 
 	case C	: 印出運算元 =======>  postfix : ABC  ,  Stack : + *
